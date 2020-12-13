@@ -1,0 +1,3 @@
+[submodule "rtl/ics-adpcm"]
+	path = rtl/ics-adpcm
+	url = git@github.com:dan-rodrigues/ics-adpcm.git
