@@ -22,7 +22,7 @@ The ESP32 implements a BLE peripheral which sends and receives messages using a 
 * Xcode 12.0.0 or newer
 * iPhone / iPad running iOS14 or newer
 
-This repo currently includes an iOS project only which makes it harder to build and run on non-macOS platforms. The Bluetooth service is very simple though and implementing a client for different platforms wouldn't take much effort.
+The client provides a basic interface to a BLE-MIDI peripheral such as the one implemented by the ESP32 software in this project. It doesn't implement the full BLE-MIDI spec, but other MIDI software with Bluetooth connectivity can be used instead.
 
 ## Usage
 
