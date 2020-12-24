@@ -42,7 +42,7 @@ The [rtl/ics-adpcm/demo](https://github.com/dan-rodrigues/ics-adpcm/tree/master/
 The Makefile must be configured according to the size of the ECP5. Default is 85F.
 
 ```
-cd rtl
+cd rtl/ics-adpcm/demo
 make ulx3s_prog
 ```
 
