@@ -7,6 +7,7 @@ The FPGA board used in this demo is the [ULX3S](https://github.com/emard/ulx3s) 
 The ESP32 implements a BLE peripheral which sends and receives messages using a custom iOS app. This mobile app provides a piano-like interface for the user to send MIDI messages for playback using the FPGA, while also displaying notes which were triggered by the FPGA itself.
 
 ![Demo GIF](doc/gifs/main.gif)
+![Demo GIF 2](doc/gifs/sub.gif)
 
 ## Prerequisites
 
