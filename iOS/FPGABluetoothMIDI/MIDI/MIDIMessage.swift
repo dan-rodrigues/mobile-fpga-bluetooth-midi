@@ -19,14 +19,20 @@ struct MIDIMessage {
         case noteOff
     }
 
-    static let fixedVelocity: UInt8 = 0x7f;
-
     let command: Command
     let channel: Int
     let note: QualifiedNote
+}
 
-    private var midiNote: UInt8 {
-        return UInt8(note.note.rawValue + note.octave * 12)
+private extension MIDIMessage {
+
+    static let fixedVelocity: UInt8 = 0x40;
+
+    static let midiMiddleC: UInt8 = 0x3c;
+    static let fixedNoteBase: UInt8 = midiMiddleC;
+
+    var midiNote: UInt8 {
+        return UInt8(Int(Self.fixedNoteBase) + note.note.rawValue + note.octave * 12)
     }
 }
 
@@ -52,8 +58,9 @@ extension MIDIMessage {
 
         self.channel = Int(message[0] & 0x0f)
 
-        let midiNote = Int(message[1] % 12)
-        let octave = Int(message[1] / 12)
+        let offsetMidiNote = message[1] - Self.fixedNoteBase
+        let midiNote = Int(offsetMidiNote % 12)
+        let octave = Int(offsetMidiNote / 12)
 
         guard let note = Note(rawValue: midiNote) else {
             os_log(.error, "Out of bounds MIDI note: %@", midiNote)
