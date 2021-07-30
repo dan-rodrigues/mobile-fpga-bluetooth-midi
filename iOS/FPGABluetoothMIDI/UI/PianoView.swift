@@ -41,7 +41,7 @@ struct PianoView: View {
         GeometryReader { geo in
             ZStack {
                 let keyWidth = geo.size.width / CGFloat(Note.naturals.count)
-                HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 0) {
+                HStack(alignment: .center, spacing: 0) {
                     ForEach(Note.naturals) { key in
                         let qualifiedNote = key.qualified(withOctave: viewModel.octave)
                         Rectangle()
